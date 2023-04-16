@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Clock() {
+const CurrentDate = () => {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -17,13 +17,11 @@ function Clock() {
 
     return (
         <div className='date-wrap'>
-            <div>
-                <p>{weekday}</p>
-                <p>{formattedDate}</p>
-            </div>
-            <p>{formattedTime}</p>
+            <span>{weekday}</span>
+            <span>{formattedDate}</span>
+            <span>{formattedTime}</span>
         </div>
     );
 }
 
-export default Clock;
+export default CurrentDate;

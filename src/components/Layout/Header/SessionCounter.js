@@ -26,7 +26,7 @@ const SessionCounter = () => {
 
     return (
         <div>
-            <p>Active sessions: {count}</p>
+            <span>Active sessions: {count}</span>
         </div>
     );
 };

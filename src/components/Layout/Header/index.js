@@ -1,13 +1,16 @@
 import React from 'react';
-import Clock from './Clock';
+import { HeaderStyles } from '../../../styles/HeaderStyles';
+import CurrentDate from './CurrentDate';
 import SessionCounter from './SessionCounter';
 
 const Header = () => {
     return (
-        <>
-            <Clock/>
-            <SessionCounter/>
-        </>
+        <HeaderStyles>
+            <div className='right-wrap'>
+                <CurrentDate/>
+                <SessionCounter/>
+            </div>
+        </HeaderStyles>
     )
 }
 

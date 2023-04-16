@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Nav } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavigationMenu = () => {
-
+    const location = useLocation();
 
     const menuItems = [
         {
@@ -16,15 +17,19 @@ const NavigationMenu = () => {
     ]
 
     return (
-        <ul className='menu-list'>
+        <Nav fill variant="pills" className='flex-column gap-2'>
             {menuItems.map((item, index) => (
-                <li key={index} className='menu-item'>
-                    <Link to={item.to}>
+                <Nav.Item key={index} className='menu-item'>
+                    <Nav.Link 
+                        as={Link}
+                        to={item.to}
+                        active={location.pathname === item.to} 
+                    >
                         {item.name}
-                    </Link>
-                </li>
+                    </Nav.Link>
+                </Nav.Item>
             ))}
-        </ul>
+        </Nav>
     )
 }
 
